@@ -1,3 +1,12 @@
 to run server = python manage.py runserver
 
 TO migrate = python manage.py migrate
+
+Delete sync = on_delete=models.CASCADE
+
+to create data store in models as sql files 
+
+1st = python manage.py makemigrations music  (music - is the folder name)
+2nd = python manage.py migrate
+
+to check sql migration = pyhton manage.py sqlmigrate music 0001   (music - is the folder name) 0001= auto increment
