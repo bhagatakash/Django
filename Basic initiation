@@ -1,0 +1,3 @@
+to run server = python manage.py runserver
+
+TO migrate = python manage.py migrate
