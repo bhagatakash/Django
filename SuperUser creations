@@ -1,0 +1,6 @@
+(base) C:\Users\d2kuser\Desktop\website>python manage.py createsuperuser
+Username (leave blank to use 'd2kuser'): admin
+Email address: akash@fastestindia.in
+Password:
+Password (again):
+Superuser created successfully.
