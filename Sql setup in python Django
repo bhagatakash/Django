@@ -1,0 +1,50 @@
+Create models in models.py page of class
+
+
+from django.db import models
+
+class Album(models.Model):
+    artist = models.CharField(max_length=250)
+    album_title = models.CharField(max_length=500)
+    genre = models.CharField(max_length=100)
+    album_logo = models.CharField(max_length=1000)
+
+class song(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    file_type = models.CharField(max_length=10)
+    song_title = models.CharField(max_length=250)
+    
+app config code in settings.py page
+
+
+INSTALLED_APPS = [
+    'music.apps.MusicConfig',
+    ]
+
+in apps of music
+
+from django.apps import AppConfig
+
+
+class MusicConfig(AppConfig):
+    name = 'music'
+    
+make migration
+
+python manage.py makemigrations music
+
+then migrate
+
+python manage.py migrate
+
+
+in shell for importing 
+
+
+
+from music.models import Album, song
+
+In [2]: Album.objects.all()
+Out[2]: <QuerySet [<Album: REd - Taylor Swift>, <Album: High School - Fastestindia>]>
+    
+    
